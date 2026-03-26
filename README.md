@@ -1,15 +1,17 @@
-# AlpineWSL
-Alpine Linux on WSL (Windows 10 1803 or later)
+# AlpineWSL-Edge
+Forked from [yuk7/AlpineWSL](https://github.com/yuk7/AlpineWSL)
+
+Alpine Linux Edge on WSL (Windows 10 1803 or later)
 based on [wsldl](https://github.com/yuk7/wsldl)
 
 ![screenshot](https://raw.githubusercontent.com/wiki/yuk7/wsldl/img/Alpine_Arch_Cent.png)
 
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yuk7/AlpineWSL/build-zip.yaml?style=flat-square)](https://github.com/yuk7/AlpineWSL/actions/workflows/build-zip.yaml)
-[![Github All Releases](https://img.shields.io/github/downloads/yuk7/AlpineWSL/total.svg?style=flat-square)](https://github.com/yuk7/AlpineWSL/releases/latest)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/arfshl/AlpineWSL-Edge/build-zip.yaml?style=flat-square)](https://github.com/arfshl/AlpineWSL-Edge/actions/workflows/build-zip.yaml)
+[![Github All Releases](https://img.shields.io/github/downloads/arfshl/AlpineWSL-Edge/total.svg?style=flat-square)](https://github.com/arfshl/AlpineWSL-Edge/releases/latest)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-![License](https://img.shields.io/github/license/yuk7/AlpineWSL.svg?style=flat-square)
+![License](https://img.shields.io/github/license/arfshl/AlpineWSL-Edge.svg?style=flat-square)
 
-### [Download](https://github.com/yuk7/AlpineWSL/releases/latest)
+### [Download](https://github.com/arfshl/AlpineWSL-Edge/releases/latest)
 
 
 ## Requirements
@@ -17,7 +19,7 @@ based on [wsldl](https://github.com/yuk7/wsldl)
 * Windows Subsystem for Linux feature is enabled.
 
 ## Install
-#### 1. [Download](https://github.com/yuk7/AlpineWSL/releases/latest) installer zip
+#### 1. [Download](https://github.com/arfshl/AlpineWSL-Edge/releases/latest) installer zip
 
 #### 2. Extract all files in zip file to same directory
 
