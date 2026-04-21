@@ -10,6 +10,8 @@ on:
     paths:
       - "build.sh"
       - ".github/workflows/*.yml"
+      - "oobe.sh"
+      - "wsl-dsitribution.conf"
 
 permissions:
   contents: write  
@@ -26,7 +28,7 @@ jobs:
         run: |
           bash build.sh
       - name: Push to release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: release-${{ env.ARCH }}-${{ env.RELEASE }}
           name: Release ${{ env.ARCH }} ${{ env.RELEASE }}
