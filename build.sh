@@ -21,7 +21,7 @@ mkdir -p ./alpinewsl
 sudo tar -xzpf alpine-minirootfs-$RELEASE-$ARCH.tar.gz -C ./alpinewsl
 sudo cp oobe.sh ./alpinewsl/etc/oobe.sh
 sudo cp wsl-distribution.conf ./alpinewsl/etc/wsl-distribution.conf
-mkdir -p ./alpinewsl/usr/lib/wsl/
+sudo mkdir -p ./alpinewsl/usr/lib/wsl/
 sudo curl -L https://raw.githubusercontent.com/yuk7/wsldl/refs/heads/main/res/Alpine/icon.ico --output-dir ./alpinewsl/usr/lib/wsl/
 
 cat <<-EOF | sudo unshare -mpf bash -e -
