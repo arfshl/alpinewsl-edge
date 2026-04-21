@@ -19,11 +19,11 @@ echo "ARCH=$ARCH" >> "$GITHUB_ENV"
 curl -LO "https://dl-cdn.alpinelinux.org/alpine/edge/releases/$ARCH/alpine-minirootfs-$RELEASE-$ARCH.tar.gz"
 mkdir -p ./alpinewsl
 sudo tar -xzpf alpine-minirootfs-$RELEASE-$ARCH.tar.gz -C ./alpinewsl
-cp ./oobe.sh ./alpinewsl/etc/oobe.sh
-chmod 777 ./alpinewsl/etc/oobe.sh
-chmod +x ./alpinewsl/etc/oobe.sh
-cp ./wsl-distribution.conf ./alpinewsl/etc/wsl-distribution.conf
-chmod 777 ./alpinewsl/etc/wsl-distribution.conf
+sudo cp ./oobe.sh ./alpinewsl/etc/oobe.sh
+sudo chmod 644 ./alpinewsl/etc/oobe.sh
+sudo chmod +x ./alpinewsl/etc/oobe.sh
+sudo cp ./wsl-distribution.conf ./alpinewsl/etc/wsl-distribution.conf
+sudo chmod 644 ./alpinewsl/etc/wsl-distribution.conf
 sudo mkdir -p ./alpinewsl/usr/lib/wsl/
 sudo curl -L https://raw.githubusercontent.com/yuk7/wsldl/refs/heads/main/res/Alpine/icon.ico --output ./alpinewsl/usr/lib/wsl/icon.ico
 
