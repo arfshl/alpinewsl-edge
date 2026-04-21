@@ -8,10 +8,9 @@ on:
   push:
     branches: [ 'main' ]
     paths:
-      - "build.sh"
+      - "build-*.sh"
       - ".github/workflows/*.yml"
-      - "oobe.sh"
-      - "wsl-dsitribution.conf"
+      - "wslconf/*"
 
 permissions:
   contents: write  
@@ -27,13 +26,22 @@ jobs:
       - name: start build
         run: |
           bash build.sh
-      - name: Push to release
+      - name: Push to release stable
         uses: softprops/action-gh-release@v3
         with:
           tag_name: release-${{ env.ARCH }}-${{ env.RELEASE }}
           name: Release ${{ env.ARCH }} ${{ env.RELEASE }}
           files: |
-            *.wsl
+            alpine.wsl
+          preserve_order: true
+          make_latest: true
+      - name: Push to release edge
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: release-${{ env.ARCH }}-${{ env.RELEASE_EDGE }}
+          name: Release ${{ env.ARCH }} ${{ env.RELEASE_EDGE }}
+          files: |
+            alpine-edge.wsl
           preserve_order: true
           make_latest: true
 

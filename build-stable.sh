@@ -1,5 +1,5 @@
 #!/bin/sh
-export RELEASE=20260127
+export RELEASE=3.23.4
 ARCH=$(uname -m)
 case "$ARCH" in
     x86_64) ARCH=x86_64 ;;
@@ -16,13 +16,13 @@ echo "ARCH=$ARCH" >> "$GITHUB_ENV"
 
 
 # start build
-curl -LO "https://dl-cdn.alpinelinux.org/alpine/edge/releases/$ARCH/alpine-minirootfs-$RELEASE-$ARCH.tar.gz"
+curl -LO "https://dl-cdn.alpinelinux.org/alpine/v${RELEASE:0:4}/releases/$ARCH/alpine-minirootfs-$RELEASE-$ARCH.tar.gz"
 mkdir -p ./alpinewsl
 sudo tar -xzpf alpine-minirootfs-$RELEASE-$ARCH.tar.gz -C ./alpinewsl
-sudo cp ./oobe.sh ./alpinewsl/etc/oobe.sh
+sudo cp ./wslconf/oobe.sh ./alpinewsl/etc/oobe.sh
 sudo chmod 644 ./alpinewsl/etc/oobe.sh
 sudo chmod +x ./alpinewsl/etc/oobe.sh
-sudo cp ./wsl-distribution.conf ./alpinewsl/etc/wsl-distribution.conf
+sudo cp ./wslconf/wsl-distribution-stable.conf ./alpinewsl/etc/wsl-distribution.conf
 sudo chmod 644 ./alpinewsl/etc/wsl-distribution.conf
 sudo mkdir -p ./alpinewsl/usr/lib/wsl/
 sudo curl -L https://raw.githubusercontent.com/yuk7/wsldl/refs/heads/main/res/Alpine/icon.ico --output ./alpinewsl/usr/lib/wsl/icon.ico
@@ -40,4 +40,4 @@ EOF
 
 cd ./alpinewsl
 sudo tar --numeric-owner --absolute-names -c  * | gzip --best > ../install.tar.gz
-mv ../install.tar.gz ../alpine-wsl-edge.wsl
+mv ../install.tar.gz ../alpine-wsl.wsl
