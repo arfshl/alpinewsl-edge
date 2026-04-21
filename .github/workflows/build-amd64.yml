@@ -25,7 +25,8 @@ jobs:
           fetch-depth: 0
       - name: start build
         run: |
-          bash build.sh
+          bash build-stable.sh
+          bash build-edge.sh
       - name: Push to release stable
         uses: softprops/action-gh-release@v3
         with:
