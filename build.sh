@@ -30,8 +30,9 @@ sudo mount --bind /proc ./alpinewsl/proc
 sudo mount --bind /sys ./alpinewsl/sys
 sudo echo 'nameserver 1.1.1.1' >> ./alpinewsl/etc/resolv.conf
 
-chroot ./alpinewsl "apk update && apk upgrade"
-chroot ./alpinewsl apk add bash sudo
+sudo chroot ./alpinewsl apk update
+sudo chroot ./alpinewsl apk upgrade
+sudo chroot ./alpinewsl apk add bash sudo
 EOF
 
 cd ./alpinewsl
