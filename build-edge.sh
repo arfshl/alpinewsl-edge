@@ -11,8 +11,8 @@ case "$ARCH" in
         exit 1
         ;;
 esac
-echo "RELEASE_EDGE=$RELEASE" >> "$GITHUB_ENV"
-echo "ARCH=$ARCH" >> "$GITHUB_ENV"
+echo "RELEASE_EDGE=$RELEASE" >> "$GITHUB_OUTPUT"
+echo "ARCH=$ARCH" >> "$GITHUB_OUTPUT"
 
 
 # start build

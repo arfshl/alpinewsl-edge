@@ -60,8 +60,8 @@ jobs:
       - name: Release stable
         uses: softprops/action-gh-release@v3
         with:
-          tag_name: ${{ env.RELEASE }}
-          name: ${{ env.RELEASE }}
+          tag_name: ${{ needs.build-x86_64.outputs.RELEASE }}
+          name: ${{ needs.build-x86_64.outputs.RELEASE }}
           files: |
             alpine-stable*.wsl
           preserve_order: true
@@ -70,8 +70,8 @@ jobs:
       - name: Release edge
         uses: softprops/action-gh-release@v3
         with:
-          tag_name: ${{ env.RELEASE_EDGE }}
-          name: ${{ env.RELEASE_EDGE }}
+          tag_name: ${{ needs.build-x86_64.outputs.RELEASE_EDGE }}
+          name: ${{ needs.build-x86_64.outputs.RELEASE_EDGE }}
           files: |
             alpine-edge*.wsl
           preserve_order: true
