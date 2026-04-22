@@ -12,7 +12,7 @@ case "$ARCH" in
         ;;
 esac
 echo "RELEASE=$RELEASE" >> "$GITHUB_OUTPUT"
-echo "ARCH=$ARCH" >> "$GITHUB_OUTPUT    "
+echo "ARCH=$ARCH" >> "$GITHUB_OUTPUT"
 
 
 # start build
