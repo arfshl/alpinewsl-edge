@@ -62,7 +62,7 @@ jobs:
 
       - name: unzip artifact
         run: |
-          tree -d ./
+          tree -adf ./
           unzip ./x86_64/*.zip -d ./
           unzip ./aarch64/*.zip -d ./
 
