@@ -60,19 +60,14 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v8
 
-      - name: unzip artifact
-        run: |
-          tree -adf ./
-          unzip ./x86_64/*.zip -d ./
-          unzip ./aarch64/*.zip -d ./
-
       - name: Release stable
         uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ needs.build-x86_64.outputs.RELEASE }}
           name: stable ${{ needs.build-x86_64.outputs.RELEASE }}
           files: |
-            alpine-stable*.wsl
+            aarch64/alpine-stable*.wsl
+            x86_64/alpine-stable*.wsl
           preserve_order: true
           make_latest: true
 
@@ -82,7 +77,8 @@ jobs:
           tag_name: ${{ needs.build-x86_64.outputs.RELEASE_EDGE }}
           name: edge ${{ needs.build-x86_64.outputs.RELEASE_EDGE }}
           files: |
-            alpine-edge*.wsl
+            aarch64/alpine-edge*.wsl
+            x86_64/alpine-edge*.wsl
           preserve_order: true
           make_latest: false
 
