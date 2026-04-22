@@ -62,8 +62,8 @@ jobs:
 
       - name: unzip artifact
         run: |
-          unzip x86_64.zip -d ./
-          unzip aarch64.zip -d ./
+          unzip ./x86_64/*.zip -d ./
+          unzip ./aarch64/*.zip -d ./
 
       - name: Release stable
         uses: softprops/action-gh-release@v3
